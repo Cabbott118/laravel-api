@@ -27,4 +27,10 @@ class TrailerController extends Controller
         $trailer = DB::table('trailers')->where('id', $id)->first();
         return response(['trailer' => $trailer]);
     }
+
+    public function deleteTrailer($id)
+    {
+        DB::table('trailers')->where('id', $id)->delete();
+        return response(['message' => 'Trailer successfully removed!']);
+    }
 }
