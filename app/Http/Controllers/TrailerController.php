@@ -33,4 +33,13 @@ class TrailerController extends Controller
         DB::table('trailers')->where('id', $id)->delete();
         return response(['message' => 'Trailer successfully removed!']);
     }
+
+    public function editTrailer(Request $request)
+    {
+        DB::table('trailers')->where('id', $request->id)->update([
+            'trailer_brand' => $request->trailer_brand,
+            'trailer_type' => $request->trailer_type
+        ]);
+        return response(['message' => 'Trailer updated successfully!']);
+    }
 }
