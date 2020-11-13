@@ -24,3 +24,5 @@ Route::post('/login', [UserController::class, 'login']);
 // Trailer Routes
 // http://localhost/laravel-rest-api/public/api/{funcName} --- testing endpoint
 Route::get('/getAllTrailers', [TrailerController::class, 'getAllTrailers']);
+Route::get('/getTrailerById/{id}', [TrailerController::class, 'getTrailerById']);
+Route::post('/addTrailer', [TrailerController::class, 'addTrailer']);
