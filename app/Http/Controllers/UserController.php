@@ -25,7 +25,6 @@ class UserController extends Controller
 
         // Create token and assign it to the user
         $accessToken = $user->createToken('authToken')->accessToken;
-        
         return response(['user' => $user, 'access_token' => $accessToken]);
     }
 
@@ -44,7 +43,6 @@ class UserController extends Controller
 
         // If user is registered, assign a token
         $accessToken = auth()->user()->createToken('authToken')->accessToken;
-
-        return response(['user' => auth()->user(), 'access_token' => $accessToken]);
+        return response(['user' => auth()->user(), 'token' => $accessToken]);
     }
 } 
