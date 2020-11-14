@@ -26,5 +26,5 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/getAllTrailers', [TrailerController::class, 'getAllTrailers']);
 Route::get('/getTrailerById/{id}', [TrailerController::class, 'getTrailerById']);
 Route::post('/addTrailer', [TrailerController::class, 'addTrailer']);
-Route::delete('/deleteTrailer/{id}', [TrailerController::class, 'deleteTrailer']);
 Route::put('/editTrailer/{id}', [TrailerController::class, 'editTrailer']);
+Route::delete('/deleteTrailer/{id}', [TrailerController::class, 'deleteTrailer']);
