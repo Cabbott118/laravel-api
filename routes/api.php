@@ -20,6 +20,7 @@ use App\Http\Controllers\TrailerController;
 // http://localhost/laravel-rest-api/public/api/{funcName} --- testing endpoint
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
+Route::post('/logout', [UserController::class, 'logout']);
 
 // Trailer Routes
 // http://localhost/laravel-rest-api/public/api/{funcName} --- testing endpoint

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Trailers;
+use App\Models\Trailer;
+use App\Models\User;
 
 class TrailerController extends Controller
 {
@@ -22,9 +23,11 @@ class TrailerController extends Controller
 
     public function addTrailer(Request $request)
     {
+        $id = Auth::id();
         DB::table('trailers')->insert([
             'trailer_brand' => $request->trailer_brand,
-            'trailer_type' => $request->trailer_type
+            'trailer_type' => $request->trailer_type,
+            'user_id' => $id
         ]);
         return response(['message' => 'Trailer successfully added!']);
     }
